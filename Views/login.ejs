@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+  <div class="mainContainerLogin">
+    <div class="container3 ">
+      <h1 class="loginTitle">Login</h1>
+
+      <div class="container4">
+        <div class="container5">
+          <div class="container6">
+            <div class="container7">
+
+              <!-- Makes POST request to /login route -->
+              <form action="/login" method="POST">
+                <div class="container8">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="username" autocomplete="off" autofocus>
+                </div>
+                <div class="container8">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-dark">Login</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container7">
+          <div class="container8">
+            <div class="container9">
+              <a class="googleOAuth" href="/auth/google" role="button">
+                <i id="googleIcon" class="bi bi-google"></i>
+                Sign Up with Google
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>

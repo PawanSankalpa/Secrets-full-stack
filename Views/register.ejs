@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+  <div class="mainContainerRegister">
+    <div class="containerRegister1">
+      <h1>Register</h1>
+
+      <div class="containerRegister2">
+        <div class="containerRegister3">
+          <div class="containerRegister4">
+            <div class="containerRegister5">
+
+              <!-- Makes POST request to /register route -->
+              <form action="/register" method="POST">
+                <div class="containerRegister6">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="username">
+                </div>
+                <div class="ContainerRegister6">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-dark">Register</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container7">
+          <div class="container8">
+            <div class="container9">
+              <a class="googleOAuth" href="/auth/google" role="button">
+                <i id="googleIcon" class="bi bi-google"></i>
+                Sign Up with Google
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') %>

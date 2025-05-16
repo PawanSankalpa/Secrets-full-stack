@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="containerSubmit1">
+  <div class="containerSubmit2">
+    <i id="secretIconInSubmitPage" class="bi bi-file-earmark-lock2"></i>
+    <h1 class="sumbmitSecretTitle">Secrets</h1>
+    <p class="submits1p">Don't keep your secrets, share them anonymously!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="containerSubmit2">
+        <input type="text" class="secretInput" name="secret" placeholder="What's your secret?" autofocus>
+      </div>
+      <button  type="submit" class="submitButton_sumbmit">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>

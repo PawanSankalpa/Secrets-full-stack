@@ -1,0 +1,508 @@
+/* styles/main.css */
+:root {
+  --deep-space: #0a192f;
+  --stellar-blue: #1f4068;
+  --nebula-purple: #6c5b7b;
+  --cosmic-cyan: #45b7d1;
+  --stardust-white: #f4f4f4;
+  --black-hole: #050a14;
+  --galaxy-edge: #16213e;
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--deep-space);
+  color: var(--stardust-white);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Cosmic Animations */
+@keyframes starlight {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes orbital-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Home Page */
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(45deg, var(--black-hole), var(--galaxy-edge));
+}
+
+.container2 {
+  background: rgba(31, 64, 104, 0.2);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(69, 183, 209, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  animation: fadeIn 1s ease-out;
+}
+
+#incognitoIcon {
+  font-size: 4.5rem;
+  color: var(--cosmic-cyan);
+  margin-bottom: 2rem;
+  animation: orbital-float 4s ease-in-out infinite;
+}
+
+.title {
+  font-size: 2.8rem;
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--nebula-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  color: rgba(244, 244, 244, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.register, .login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.5rem;
+  margin: 0 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.register {
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--nebula-purple));
+  color: var(--stardust-white);
+}
+
+.login {
+  background: transparent;
+  border-color: var(--cosmic-cyan);
+  color: var(--cosmic-cyan);
+}
+
+.register:hover, .login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px rgba(69, 183, 209, 0.3);
+}
+
+.login:hover {
+  background: rgba(69, 183, 209, 0.1);
+}
+
+/* Auth Pages */
+.mainContainerLogin, .mainContainerRegister {
+  min-height: 110vh;
+  background-color: #91c3e7;
+  margin-top: -65px;
+}
+.container3, .containerRegister1 {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.container4, .containerRegister2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.container5, .containerRegister3 {
+  background: rgba(31, 64, 104, 0.2);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(69, 183, 209, 0.1);
+}
+
+.form-control {
+  width: 100%;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  background: rgba(10, 25, 47, 0.4);
+  border: 2px solid var(--stellar-blue);
+  border-radius: 12px;
+  color: var(--stardust-white);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--cosmic-cyan);
+  box-shadow: 0 0 20px rgba(69, 183, 209, 0.2);
+  background: rgba(10, 25, 47, 0.6);
+}
+
+.btn-dark {
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--nebula-purple));
+  border: none;
+  padding: 1.2rem;
+  border-radius: 12px;
+  color: var(--stardust-white);
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1.5rem;
+  transition: var(--transition);
+}
+
+.btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 25px rgba(69, 183, 209, 0.3);
+}
+
+/* Modern Google OAuth Button */
+.googleOAuth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(45deg, #4285f4, #34a853);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.googleOAuth::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.googleOAuth:hover::before {
+  left: 100%;
+}
+
+.googleOAuth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 25px rgba(66, 133, 244, 0.3);
+}
+
+#googleIcon {
+  font-size: 1.4rem;
+}
+
+/* Secrets Page */
+.containerSecrets1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(45deg, var(--black-hole), var(--galaxy-edge));
+}
+
+.containerSecrets2 {
+  background: rgba(31, 64, 104, 0.2);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(69, 183, 209, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 90%;
+}
+
+#secretFileIcon {
+  font-size: 5rem;
+  margin: 2rem 0;
+  color: var(--cosmic-cyan);
+}
+.secretsh1 {
+  font-size: 2.2rem;
+  margin: 2rem 0;
+  color: var(--cosmic-cyan);
+}
+
+.secrets2p {
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--stardust-white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 2rem 0;
+}
+
+.secretsLogout, .secretsSumbit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.5rem;
+  margin: 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.secretsSumbit {
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--nebula-purple));
+  color: var(--stardust-white);
+}
+
+.secretsLogout {
+  border: 2px solid var(--cosmic-cyan);
+  color: var(--cosmic-cyan);
+}
+
+.secretsSumbit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(69, 183, 209, 0.4);
+  background: linear-gradient(45deg, 
+    var(--cosmic-cyan) 0%, 
+    var(--nebula-purple) 50%,
+    var(--cosmic-cyan) 100%);
+  background-size: 200% auto;
+  animation: gradientFlow 3s linear infinite;
+}
+
+.secretsLogout:hover {
+  background: linear-gradient(45deg, 
+    var(--cosmic-cyan), 
+    var(--nebula-purple));
+  color: var(--stardust-white);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(69, 183, 209, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.secretsLogout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.secretsLogout:hover::before {
+  left: 100%;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Add click feedback */
+.secretsSumbit:active,
+.secretsLogout:active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
+
+/* Ensure smooth transitions */
+.secretsLogout {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.secretsSumbit {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+             background 1s ease;
+}
+
+/* Submit Page */
+/* Submit Page */
+.containerSubmit1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(45deg, var(--black-hole), var(--galaxy-edge));
+}
+
+.containerSubmit2 {
+  background: rgba(31, 64, 104, 0.2);
+  padding: 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(69, 183, 209, 0.1);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+}
+
+.sumbmitSecretTitle {
+  font-size: 2.5rem;
+  color: var(--cosmic-cyan);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#secretIconInSubmitPage {
+  font-size: 4.5rem;
+  color: var(--cosmic-cyan);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.submits1p {
+  font-size: 1.1rem;
+  color: var(--stardust-white);
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.secretInput {
+  width: 100%;
+  padding: 1.2rem;
+  margin: 2rem 0;
+  background: rgba(10, 25, 47, 0.4);
+  border: 2px solid var(--stellar-blue);
+  border-radius: 12px;
+  color: var(--stardust-white);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.secretInput:focus {
+  border-color: var(--cosmic-cyan);
+  box-shadow: 0 0 20px rgba(69, 183, 209, 0.2);
+  background: rgba(10, 25, 47, 0.6);
+}
+
+.submitButton_sumbmit {
+  background: linear-gradient(45deg, var(--cosmic-cyan), var(--nebula-purple));
+  color: var(--stardust-white);
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid transparent;
+  font-size: 1.1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--transition);
+  display: block;
+  margin: 30px auto;
+}
+
+.submitButton_sumbmit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(69, 183, 209, 0.3);
+}
+
+.submitButton_sumbmit:active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes orbital-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(4deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container2, .containerSecrets2, .containerSubmit2 {
+    padding: 2rem;
+  }
+
+  .title, .loginTitle {
+    font-size: 2.2rem;
+  }
+
+  .register, .login {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .container4, .containerRegister2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container2 {
+    padding: 1.5rem;
+  }
+
+  #incognitoIcon {
+    font-size: 3.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .googleOAuth {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .container2, .containerSecrets2 {
+    max-width: 1000px;
+    padding: 4rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
